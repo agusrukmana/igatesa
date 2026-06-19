@@ -1,0 +1,68 @@
+-- FN_SPLIT_TEXT & FN_SPLIT_NUM by ekgun @ 23.08.2024
+-----------------------------------------------------
+CREATE OR REPLACE FUNCTION MASTER.FN_SPLIT_TEXT (String VARCHAR(32000), SEP VARCHAR(5))
+RETURNS TABLE (ID INT, VALUE VARCHAR(256))
+  LANGUAGE SQL
+  DISALLOW PARALLEL
+  DETERMINISTIC
+  NOT FENCED
+  RETURN
+  WITH CTE (ID,StartString,StopString) AS
+  (
+    SELECT 1 AS ID, 1 AS StartString, LOCATE(SEP, String) AS StopString
+    FROM SYSIBM.SYSDUMMY1
+    WHERE LENGTH(SEP) > 0 AND LENGTH(String) > 0
+    UNION ALL
+    SELECT ID + 1, StopString + LENGTH(SEP), LOCATE(SEP, String, StopString + LENGTH(SEP))
+    FROM CTE
+    WHERE StopString > 0
+  )
+  SELECT
+    ID,
+    SUBSTRING(String,StartString,
+      CASE WHEN StopString = 0
+      THEN LENGTH(String)
+      ELSE StopString-StartString END
+    )
+  FROM CTE;
+ 
+ -- -------------
+ -- SPLIT NUMBER
+ -- -------------
+CREATE OR REPLACE FUNCTION MASTER.FN_SPLIT_NUM (String VARCHAR(32000), SEP VARCHAR(5))
+RETURNS TABLE (ID INT, NOMINAL DECIMAL(17,2))
+  LANGUAGE SQL
+  DISALLOW PARALLEL
+  DETERMINISTIC
+  NOT FENCED
+  RETURN
+  WITH CTE (ID,StartString,StopString) AS
+  (
+    SELECT 1 AS ID, 1 AS StartString, LOCATE(SEP, String) AS StopString
+    FROM SYSIBM.SYSDUMMY1
+    WHERE LENGTH(SEP) > 0 AND LENGTH(String) > 0
+    UNION ALL
+    SELECT ID + 1, StopString + LENGTH(SEP), LOCATE(SEP, String, StopString + LENGTH(SEP))
+    FROM CTE
+    WHERE StopString > 0
+  )
+  SELECT
+    ID,
+    SUBSTRING(String,StartString,
+      CASE WHEN StopString = 0
+      THEN LENGTH(String)
+      ELSE StopString-StartString END
+    )
+  FROM CTE;
+ 
+ -- -----------
+ -- Sample Call
+ -- -----------
+ SELECT * FROM TABLE (MASTER.FN_SPLIT_TEXT('4182511-S_4182701-X_4182702-X_4182703-X_4182796-S' , '_'));
+ SELECT ID, NOMINAL FROM TABLE (MASTER.FN_SPLIT_NUM('129000.59,5900025.00,12400.00,252000.05,125.55', ','));
+
+ -- Sample Join edited
+ SELECT *
+ FROM TABLE(MASTER.FN_SPLIT_NUM('1200.00, 5900025.00, 12400.00, 252000.05, 125.55, 1250, 98009, 8900, 97, 0.97, 25900.88', ',')) X 
+ LEFT JOIN (SELECT CAST(KD_PARAM2 AS INTEGER) AS PAR1, KETERANGAN, VALUE AS VAL  FROM master.TBL_PARAMETER  WHERE KD_PARAM1 = '09') Y
+ ON X.ID = Y.PAR1 ;

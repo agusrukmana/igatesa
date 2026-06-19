@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <!-- Use the appropriate version (netcoreapp3.1, net5.0, net6.0, etc.) -->
+    <!-- Runtime identifier for Windows x64 -->
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <!-- Publish settings -->
+    <PublishSingleFile>true</PublishSingleFile>
+    <!-- Creates a single executable file -->
+    <PublishTrimmed>true</PublishTrimmed>
+    <!-- Trim unused dependencies to reduce file size -->
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <!-- Ready-to-run compilation for faster startup -->
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <PublishUrlHistory>publish\</PublishUrlHistory>
+    <InstallUrlHistory />
+    <SupportUrlHistory />
+    <UpdateUrlHistory />
+    <BootstrapperUrlHistory />
+    <ErrorReportUrlHistory />
+    <FallbackCulture>en-US</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+    <!-- Compress the single file for smaller size -->
+  </PropertyGroup>
+</Project>
