@@ -52,7 +52,7 @@ namespace Application
             foreach (TrxDataLog tx in list)
             {
                 /* Split trx BPJSTK PU */
-                if (tx.TransactionData.Contains("BPJS_TK_PU"))
+                if (tx.TransactionData.Contains("BPJS_TK_PU") || tx.TransactionData.Contains("BPJS PU"))
                 {
 					log.TRACE($"Records  :: #{idx++}");
                     log.TRACE($"TrxiGate :: {tx.Id} | {tx.Created.ToString("yyyy-MM-dd HH:mm:ss.fffff")} > {tx.TransactionData}");

@@ -24,7 +24,8 @@ CREATE OR REPLACE PROCEDURE MASTER.SP_TXMULTI_INSERT (
 	IN IC_PROCBY 		CHAR ( 1 ) ,
 	IN IC_TGLSYS		CHAR ( 8 ) ,
 	IN IC_JAMTX 		CHAR ( 6 ) ,
-	IN IC_FLGKOR		CHAR ( 1 ) , 		
+	IN IC_FLGKOR		CHAR ( 1 ) , 
+    IN IVC_ADDINFO      VARCHAR ( 1024 ) ,	
 	-- RESPON	 
 	OUT OC_RCODE 		CHAR(2) , 
 	OUT OVC_PESAN 		VARCHAR(255)	
@@ -285,8 +286,13 @@ CREATE OR REPLACE PROCEDURE MASTER.SP_TXMULTI_INSERT (
 					SET LVC_KETLAIN2 = 'REVERSAL' ;
 					
 				END IF ;
+				
+				IF IVC_JNSTX = 'BPJS_TK_PU' THEN 
+					SET LC_PREFX = 'PU' ;
+				END IF ;	
+					
 			
-				SET LVC_KETTX = LC_PREFX || '_' ||  IVC_REFNO ;
+				SET LVC_KETTX = LC_PREFX || ' ' ||  REPLACE(IVC_REFNO, '.', ' ') ||' ' || IVC_ADDINFO  ;
 				
 				INSERT INTO MASTER.TX_MULTIREK 	(	RNO			, RTOT			, RNOM			, APP		, 
 													REFNO		, LOKTX			, KDCAB			, KDAPL		, 
@@ -323,7 +329,7 @@ CREATE OR REPLACE PROCEDURE MASTER.SP_TXMULTI_INSERT (
 	-- LOG
 	INSERT INTO MASTER.TX_MULTIREK_LOG (  STATUS 		, REFNO 		 , APP 		,	KDVIA      ,
 										  PROCBY 		, JNSTX  		 , RDB 		,   FLGATM     ,
-										  RKR 			, AKMDB 		 , AKMKR 	,
+										  RKR 			, AKMDB 		 , AKMKR 	,	IVCPAKET   ,
 										  RTOT 			, RNOM 			 , KDVAL 	,
 										  LOKTX 		, TGLTX			 , NOARSP 	,
 										  RCODE 		, KETERANGAN	 , NOARSIP	,	
@@ -332,7 +338,7 @@ CREATE OR REPLACE PROCEDURE MASTER.SP_TXMULTI_INSERT (
 										)
 							VALUES		( ODO_STATUS	, OVC_REFNO 	 , IC_APP 		,  IC_KDVIA   ,
 										  IC_PROCBY 	, IVC_JNSTX		 , LI_CNTDB 	,  LC_LIB     ,
-										  LI_CNTKR		, LDEC_AKMDB	 , LDEC_AKMKR 	,
+										  LI_CNTKR		, LDEC_AKMDB	 , LDEC_AKMKR 	,  IVC_ADDINFO, -- aditional
 										  LI_RTOT		, LDEC_AKMDB	 , IC_KDVAL 	,
 										  IC_LOKTX		, LD_OPENDATE	 , IVC_NOARSIP 	,
 										  OC_RCODE		, OVC_PESAN		 , ''			,

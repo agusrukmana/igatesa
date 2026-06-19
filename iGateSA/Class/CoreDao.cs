@@ -22,6 +22,7 @@ namespace Application.Class
         public string App { get; set; }        
         public string TglSys { get; set; }
         public string JamSys { get; set; }
+        public string AddInfo { get; set; }
         public enum EnumFlgKoreksi { NORMAL = '0', REVERSAL = 'R' }
         public enum EnumProcBy { TELLER = '1', AUTOPROC = '3', WINSERVICES = '5' }        
         public EnumProcBy ProcBy;
@@ -51,7 +52,7 @@ namespace Application.Class
                 OdbcCon.ConnectionTimeout = 1;
 
                 // Stored Procedure
-                OdbcCmd.CommandText = "{CALL MASTER.SP_TXMULTI_INSERT(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+                OdbcCmd.CommandText = "{CALL MASTER.SP_TXMULTI_INSERT(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
                 OdbcCmd.CommandType = CommandType.StoredProcedure;
                 OdbcCmd.Connection = OdbcCon;
                 OdbcCmd.Parameters.Clear();
@@ -71,6 +72,7 @@ namespace Application.Class
                 OdbcCmd.Parameters.Add("IC_TGLSYS", OdbcType.Char, 8).Direction = ParameterDirection.Input;
                 OdbcCmd.Parameters.Add("IC_JAMTX", OdbcType.Char, 6).Direction = ParameterDirection.Input;
                 OdbcCmd.Parameters.Add("IC_FLGKOR", OdbcType.Char, 1).Direction = ParameterDirection.Input;
+                OdbcCmd.Parameters.Add("IVC_ADDINFO", OdbcType.VarChar, 1024).Direction = ParameterDirection.Input;
 
                 // Value IN
                 OdbcCmd.Parameters["IVC_JNSTX"].Value = cd.JnsTrx;
@@ -86,6 +88,7 @@ namespace Application.Class
                 OdbcCmd.Parameters["IC_TGLSYS"].Value = cd.TglSys;
                 OdbcCmd.Parameters["IC_JAMTX"].Value = cd.JamSys;
                 OdbcCmd.Parameters["IC_FLGKOR"].Value = (char)cd.FlgKoreksi;
+                OdbcCmd.Parameters["IVC_ADDINFO"].Value = cd.AddInfo;
 
                 // Parameter Output SP                
                 OdbcCmd.Parameters.Add("OC_RCODE", OdbcType.Char, 2).Direction = ParameterDirection.Output;
@@ -106,6 +109,7 @@ namespace Application.Class
                 lg.TRACE($"  |- IC_TGLSYS   : {cd.TglSys}");
                 lg.TRACE($"  |- IC_JAMTX    : {cd.JamSys}");
                 lg.TRACE($"  |- IC_FLGKOR   : {cd.FlgKoreksi}");
+                lg.TRACE($"  |- IVC_ADDINFO   : {cd.AddInfo}");
 
                 lg.REQ($"  CALL MASTER.SP_TXMULTI_INSERT(?,'{cd.JnsTrx}','{cd.KdVia}','{cd.NoReff}','{cd.NoArsip}', '{cd.LokTx}','{cd.KdValuta}','{cd.ListTxDb}','{cd.ListTxCr}','{cd.App}','{(char)cd.ProcBy}','{cd.TglSys}','{cd.JamSys}','{(char)cd.FlgKoreksi}',?,?)");
 

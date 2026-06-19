@@ -1,0 +1,21 @@
+﻿Installing assembly 'C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Release\iGateSAServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Release\iGateSAServices.InstallLog
+   assemblypath = C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Release\iGateSAServices.exe
+Installing service iGate Sync Agent...
+Service iGate Sync Agent has been successfully installed.
+Creating EventLog source iGate Sync Agent in log Application...
+Committing assembly 'C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Release\iGateSAServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Release\iGateSAServices.InstallLog
+   assemblypath = C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Release\iGateSAServices.exe
+Uninstalling assembly 'C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Release\iGateSAServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Release\iGateSAServices.InstallLog
+   assemblypath = C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Release\iGateSAServices.exe
+Removing EventLog source iGate Sync Agent.
+Service iGate Sync Agent is being removed from the system...
+Service iGate Sync Agent was successfully removed from the system.

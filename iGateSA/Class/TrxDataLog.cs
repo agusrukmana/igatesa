@@ -35,22 +35,34 @@ namespace Application.Class
         DbPostgres db;
         DataTable dt;
         string sql;
+        string sqlemon;
 
         /* Database */
         string dbIgate = "db_igate";
         string dbIBB = "db_ibb";
+        string dbemon = "db_emon";
 
 
         /* Get List */
         public List<TrxDataLog> GetListUnproccess(int limitRows)
         {
+
             int intervalDelay = int.Parse(ConfigurationManager.AppSettings["app_backdate_delay"]);
             sql = $" select id, transaction_data, created " + 
-                   "   from t_transaction_data " + 
+                   "   from ebanking.t_transaction_data " + 
                    "  where flg_prcs = '0' " +
                   $"    and created >= NOW() - INTERVAL '{intervalDelay} minutes' " + 
-                   "    and transaction_data like '%SUCCEED%' " + 
-                  $"  limit {limitRows}; ";
+                   "    and transaction_data like '%SUCCEED%' " +
+                 // $"  limit {limitRows}; ";
+                 "   and (transaction_data like '%BPJS_TK_PU%' or transaction_data like '%BPJS PU%') ";
+
+            sqlemon = $" select id, transaction_data, created " +
+                   "   from emoney.t_transaction_data " +
+                   "  where flg_prcs = '0' " +
+                  $"    and created >= NOW() - INTERVAL '{intervalDelay} minutes' " +
+                   "    and transaction_data like '%SUCCEED%' " +
+                  //$"  limit {limitRows}; ";
+                  "   and transaction_data like '%BPJS_TK_PU%' ";
 
             //Get DbIgate
             db = new DbPostgres(dbIgate);
@@ -69,9 +81,9 @@ namespace Application.Class
                 listObject.Add(tg);
             }
 
-            //Get DbIBB
-            db = new DbPostgres(dbIBB);
-            dt = db.GetRecord(sql);
+            //Get dbemon
+            db = new DbPostgres(dbemon);
+            dt = db.GetRecord(sqlemon);
             foreach (DataRow dr in dt.Rows)
             {
                 tg = new TrxDataLog
@@ -79,19 +91,50 @@ namespace Application.Class
                     Id = Decimal.Parse(dr["id"].ToString()),
                     TransactionData = dr["transaction_data"].ToString(),
                     Created = (DateTime)dr["created"],
-                    DbSource = dbIBB
+                        DbSource = dbemon
+                    
                 };
 
                 listObject.Add(tg);
             }
+
+            
+
+
+            //Get DbIBB
+            db = new DbPostgres(dbIBB);
+            dt = db.GetRecord(sql);
+            foreach (DataRow dr in dt.Rows)
+
+            {
+                tg = new TrxDataLog
+                {
+                    Id = Decimal.Parse(dr["id"].ToString()),
+                    TransactionData = dr["transaction_data"].ToString(),
+                    Created = (DateTime)dr["created"],
+                    DbSource = dbIBB
+
+                   
+
+                };
+
+               
+                listObject.Add(tg);
+            }
+            
+
             return listObject;
         }
+
+      
 
         /* DoFlagging after process /Ekgun  */
         public bool DoFlagging(TrxDataLog tx)
         {
+           
+
             bool endCode = false;
-            sql = $" update  t_transaction_data " +
+            sql = $" update  ebanking.t_transaction_data " +
                   $"    set  flg_prcs  = '1', " +
                   $"         rcode     = '{tx.RCode}', " +
                   $"         tsflging  = now(), " + 
@@ -99,6 +142,22 @@ namespace Application.Class
                   $"         rcmsg     = '{tx.RCMessage}' " + 
                   $"  where  id        = {tx.Id} " + 
                   $"    and  flg_prcs  = '0'; ";
+
+            sqlemon = $" update emoney.t_transaction_data " +
+                  $"    set  flg_prcs  = '1', " +
+                  $"         rcode     = '{tx.RCode}', " +
+                  $"         tsflging  = now(), " +
+                  $"         appsrvs   = 'igatesa', " +
+                  $"         rcmsg     = '{tx.RCMessage}' " +
+                  $"  where  id        = {tx.Id} " +
+                  $"    and  flg_prcs  = '0'; ";
+
+
+            if (tx.DbSource == dbemon) // Ubah sesuai nilai spesifik `dbemon`
+            {
+                sql = sqlemon;
+            }
+
 
             db = new DbPostgres(tx.DbSource);
             int rAff = db.ExecDML(sql);

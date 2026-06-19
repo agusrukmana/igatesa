@@ -1,0 +1,16 @@
+﻿Installing assembly 'C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\obj\Debug\iGateSAServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\obj\Debug\iGateSAServices.InstallLog
+   assemblypath = C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\obj\Debug\iGateSAServices.exe
+Installing service iGate Sync Agent...
+Creating EventLog source iGate Sync Agent in log Application...
+Rolling back assembly 'C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\obj\Debug\iGateSAServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\obj\Debug\iGateSAServices.InstallLog
+   assemblypath = C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\obj\Debug\iGateSAServices.exe
+Restoring event log to previous state for source iGate Sync Agent.
+An exception occurred during the Rollback phase of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: The source was not found, but some or all event logs could not be searched.  Inaccessible logs: Security.
+An exception occurred during the Rollback phase of the installation. This exception will be ignored and the rollback will continue. However, the machine might not fully revert to its initial state after the rollback is complete.

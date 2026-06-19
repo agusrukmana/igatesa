@@ -36,3 +36,119 @@ D:\wsSplitIgaate\igatesa_windows_service\iGateSA\obj\Debug\iGateSA.csproj.CoreCo
 D:\wsSplitIgaate\igatesa_windows_service\iGateSA\obj\Debug\iGateSA.csproj.Up2Date
 D:\wsSplitIgaate\igatesa_windows_service\iGateSA\obj\Debug\iGateSAServices.exe
 D:\wsSplitIgaate\igatesa_windows_service\iGateSA\obj\Debug\iGateSAServices.pdb
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\iGateSAServices.exe.config
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\iGateSAServices.exe
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\iGateSAServices.pdb
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\BouncyCastle.Crypto.dll
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Google.Protobuf.dll
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\MySql.Data.dll
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Newtonsoft.Json.dll
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Npgsql.dll
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Npgsql.Json.NET.dll
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Renci.SshNet.dll
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\RestSharp.dll
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\System.Buffers.dll
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\System.Memory.dll
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\System.ValueTuple.dll
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Telegram.Bot.dll
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Ubiety.Dns.Core.dll
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Google.Protobuf.xml
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\MySql.Data.xml
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Newtonsoft.Json.xml
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Npgsql.pdb
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Npgsql.xml
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Npgsql.Json.NET.pdb
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Npgsql.Json.NET.xml
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Renci.SshNet.xml
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\RestSharp.xml
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\System.Buffers.xml
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\System.Memory.xml
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\System.ValueTuple.xml
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Telegram.Bot.xml
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\obj\Debug\iGateSA.csproj.AssemblyReference.cache
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\obj\Debug\iGateSA.csproj.SuggestedBindingRedirects.cache
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\obj\Debug\iGateSA.csproj.CoreCompileInputs.cache
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\obj\Debug\iGateSA.csproj.CopyComplete
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\obj\Debug\iGateSAServices.exe
+C:\RUKMANA\WSsplit\igatesa_windows_service\iGateSA\obj\Debug\iGateSAServices.pdb
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\iGateSAServices.exe.config
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\iGateSAServices.exe
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\iGateSAServices.pdb
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\BouncyCastle.Crypto.dll
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Google.Protobuf.dll
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\MySql.Data.dll
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Newtonsoft.Json.dll
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Npgsql.dll
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Npgsql.Json.NET.dll
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Renci.SshNet.dll
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\RestSharp.dll
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\System.Buffers.dll
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\System.Memory.dll
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\System.ValueTuple.dll
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Telegram.Bot.dll
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Ubiety.Dns.Core.dll
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Google.Protobuf.xml
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\MySql.Data.xml
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Newtonsoft.Json.xml
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Npgsql.pdb
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Npgsql.xml
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Npgsql.Json.NET.pdb
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Npgsql.Json.NET.xml
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Renci.SshNet.xml
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\RestSharp.xml
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\System.Buffers.xml
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\System.Memory.xml
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\System.ValueTuple.xml
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\bin\Debug\Telegram.Bot.xml
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\obj\Debug\iGateSA.csproj.AssemblyReference.cache
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\obj\Debug\iGateSA.csproj.CoreCompileInputs.cache
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\obj\Debug\iGateSA.csproj.Up2Date
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\obj\Debug\iGateSAServices.exe
+D:\wsSplitIgaate\WSsplit\igatesa_windows_service\iGateSA\obj\Debug\iGateSAServices.pdb
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\iGateSAServices.exe.config
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\iGateSAServices.exe
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\iGateSAServices.pdb
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\BouncyCastle.Crypto.dll
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\Google.Protobuf.dll
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\MySql.Data.dll
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\Newtonsoft.Json.dll
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\Npgsql.dll
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\Npgsql.Json.NET.dll
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\Renci.SshNet.dll
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\RestSharp.dll
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\System.Buffers.dll
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\System.Memory.dll
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\System.ValueTuple.dll
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\Telegram.Bot.dll
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\Ubiety.Dns.Core.dll
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\Google.Protobuf.xml
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\MySql.Data.xml
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\Newtonsoft.Json.xml
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\Npgsql.pdb
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\Npgsql.xml
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\Npgsql.Json.NET.pdb
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\Npgsql.Json.NET.xml
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\Renci.SshNet.xml
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\RestSharp.xml
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\System.Buffers.xml
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\System.Memory.xml
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\System.ValueTuple.xml
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\bin\Debug\Telegram.Bot.xml
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\obj\Debug\iGateSA.csproj.AssemblyReference.cache
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\obj\Debug\iGateSA.csproj.CoreCompileInputs.cache
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\obj\Debug\iGateSA.csproj.Up2Date
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\obj\Debug\iGateSAServices.exe
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\obj\Debug\iGateSAServices.pdb
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\obj\Debug\iGateSAServices.exe.config

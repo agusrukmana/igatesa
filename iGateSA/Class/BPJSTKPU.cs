@@ -13,6 +13,8 @@ namespace Application.Class
         public string ProductName { get; set; }
         public string ReferenceNumber { get; set; }
         public string CustomerReference { get; set; }
+
+        public string noTagihan { get; set; }
         public string Status { get; set; }
         public decimal BpjskTk { get; set; }
         public decimal Jht { get; set; }
@@ -26,6 +28,7 @@ namespace Application.Class
         public string DeliveryChannel { get; set; }
         public string TrxVia { get; set; }
         public string TransactionDate { get; set; }
+        public string Npp { get; set; }
         public DateTime TransDate { get; set; }
         public StatusCode endCode { get; set; }
         
@@ -49,13 +52,19 @@ namespace Application.Class
 
         /* Breakdown Json TransactionData */
         public bool DoBreakdown(TrxDataLog tx)
-        {
+        {            
             // Json string to class BPJSTKPU 
-            string jsonString = tx.TransactionData;
+            string jsonString = tx.TransactionData;            
             BPJSTKPU bp = JsonConvert.DeserializeObject<BPJSTKPU>(jsonString);
 
+            log.INFO($" NoArsip: {tx.TransactionData}");
             // Cast
             bp.TransDate = DateTime.ParseExact(bp.TransactionDate, "dd MM yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+
+            if (bp.DeliveryChannel == "MBN")
+            {
+                bp.Description = "BPJS_TK_PU";
+            }
 
             // Mapping
             switch (bp.DeliveryChannel)
@@ -76,6 +85,7 @@ namespace Application.Class
 
             log.INFO($" NoArsip: {bp.ReferenceNumber}");
             log.INFO($" - productName       : {bp.ProductName}");
+            log.INFO($" - noTagihan       : {bp.noTagihan}");
             log.INFO($" - description       : {bp.Description}");
             log.INFO($" - accountNumber     : {bp.AccountNumber}");
             log.INFO($" - kodeCabang        : {bp.KodeCabang}");
@@ -115,15 +125,16 @@ namespace Application.Class
             cd            = new CoreDao();
             cd.JnsTrx     = bp.Description;
             cd.KdVia      = bp.DeliveryChannel; // Perlu mapping based on Description atau lainnya
-            cd.NoReff     = $"{bp.CustomerReference}.{bp.ReferenceNumber}";
+            cd.NoReff     = $"{bp.noTagihan}.{bp.CustomerReference}";
             cd.NoArsip    = bp.ReferenceNumber;
-            cd.LokTx      = bp.KodeCabang;
+            cd.LokTx      = string.IsNullOrEmpty(bp.KodeCabang) ? "010" : bp.KodeCabang;
             cd.KdValuta   = "360";
             cd.ListTxDb   = bp.BpjskTk.ToString("F2");
             cd.ListTxCr   = $"{bp.Jht.ToString("F2")}|{bp.Jkk.ToString("F2")}|{bp.Jkm.ToString("F2")}|{bp.Jpk.ToString("F2")}|{bp.Jpn.ToString("F2")}";
             cd.App        = "IGATE";
             cd.ProcBy     = CoreDao.EnumProcBy.WINSERVICES;
             cd.FlgKoreksi = CoreDao.EnumFlgKoreksi.NORMAL;
+            cd.AddInfo    = $"{bp.Npp} {bp.Description}";
             cd.TglSys     = bp.TransDate.ToString("yyyyMMdd");
             cd.JamSys     = bp.TransDate.ToString("HHmmss");
             cd.DoInsertTxMultiRek(cd);
