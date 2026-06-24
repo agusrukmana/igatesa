@@ -117,6 +117,10 @@ namespace Application.Class
                 try
                 {
                     OdbcCon.Open();
+                    // Generate No Reff baru TAMBHAKAN JIKA DIBUTHKAN KONDISI TERDAPAT NOREFF YANG SAMA PADA TGLTX
+                    //cd.NoReff = GenerateRefNo(OdbcCon, cd.NoReff);
+                    //OdbcCmd.Parameters["IVC_REFNO"].Value = cd.NoReff;
+                    //lg.TRACE($"  ------------------|- NOREF  : {cd.NoReff}");
                     OdbcCmd.ExecuteNonQuery();
                     string sResponse = OdbcCmd.Parameters["OC_RCODE"].Value.ToString() + " : " +
                                        OdbcCmd.Parameters["OVC_PESAN"].Value.ToString() + " : (" +
@@ -145,6 +149,45 @@ namespace Application.Class
 
             }
             
+        }
+
+        private string GenerateRefNo(OdbcConnection conn, string refNo)
+        {
+
+
+            string sql = @"
+        SELECT REFNO
+        FROM MASTER.TX_MULTIREK
+        WHERE TGLTX = (SELECT OPEN_DATE FROM MASTER.SYSTEM_HOST)
+          AND REFNO LIKE ?
+        ORDER BY REFNO DESC
+        FETCH FIRST 1 ROW ONLY";
+
+            using (OdbcCommand cmd = new OdbcCommand(sql, conn))
+            {
+                cmd.Parameters.Add("@P1", OdbcType.VarChar).Value = refNo + "%";
+
+                object obj = cmd.ExecuteScalar();
+
+                // belum ada
+                if (obj == null || obj == DBNull.Value)
+                    return refNo;
+
+                string lastRef = obj.ToString();
+
+                // REFNO asli tanpa suffix
+                if (lastRef == refNo)
+                    return refNo + "_01";
+
+                int idx = lastRef.LastIndexOf('_');
+
+                if (idx < 0)
+                    return refNo + "_01";
+
+                int counter = Convert.ToInt32(lastRef.Substring(idx + 1));
+
+                return refNo + "_" + (counter + 1).ToString("D2");
+            }
         }
     }
 }

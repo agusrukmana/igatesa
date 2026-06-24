@@ -151,3 +151,4 @@ D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\obj\Debug\iGateSA
 D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\obj\Debug\iGateSA.csproj.Up2Date
 D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\obj\Debug\iGateSAServices.exe
 D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\obj\Debug\iGateSAServices.pdb
+D:\07. igatesa_windows_service\IGateSA_Windows_Service\iGateSA\obj\Debug\iGateSAServices.exe.config
