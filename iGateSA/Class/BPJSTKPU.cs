@@ -57,7 +57,7 @@ namespace Application.Class
             string jsonString = tx.TransactionData;            
             BPJSTKPU bp = JsonConvert.DeserializeObject<BPJSTKPU>(jsonString);
 
-            log.INFO($" NoArsip: {tx.TransactionData}");
+           // log.INFO($" NoArsip: {tx.TransactionData}");
             // Cast
             bp.TransDate = DateTime.ParseExact(bp.TransactionDate, "dd MM yyyy HH:mm:ss", CultureInfo.InvariantCulture);
 
